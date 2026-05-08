@@ -87,4 +87,8 @@ Rails.application.configure do
   #
   # Skip DNS rebinding protection for the default health check endpoint.
   # config.host_authorization = { exclude: ->(request) { request.path == "/up" } }
+
+  # Tell application to set the secret key using the environment variable
+  # instead of looking for it in secrets.yml.
+  config.secret_key_base = ENV["SECRET_KEY_BASE"]
 end
